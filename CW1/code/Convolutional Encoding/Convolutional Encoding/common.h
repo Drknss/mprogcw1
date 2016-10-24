@@ -9,8 +9,7 @@ class common
 public:
 	common();
 	~common();
-	int xorgate(int a, int b);
-	void readin(string file_location);
-	void printfile();
+	string readin(string file_location);
+	void printtofile(string file, string content);
 };
 

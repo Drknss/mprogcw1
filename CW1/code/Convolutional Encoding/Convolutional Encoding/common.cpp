@@ -9,25 +9,27 @@ common::~common()
 {
 }
 
-int common::xorgate(int a, int b) {
-	if (a == 0 && b == 1 || a == 1 && b == 0) {
-		return 1;
+string common::readin(string file_location) {
+	try {
+		ifstream file(file_location);
+		if (file.is_open()) {
+			string file_contents{ istreambuf_iterator<char>(file), istreambuf_iterator<char>() };
+			//file.close;
+			return file_contents;
+		}		
 	}
-	return 0;
+	catch(std::exception &ex){
+		throw std::runtime_error("Could not open file");
+	}
 }
 
-void common::readin(string file_location) {
-	string line;
-	ifstream file (file_location);
-	if (file.is_open()) {
-		while (getline(file, line)) {
-			line += line;
-		}
-		file.close;
+void common::printtofile(string file, string content) {
+	try {
+		ofstream out(file + ".txt");
+		out << content;
+		//out.close;
 	}
-	else(
-		cout << "Error opening file" << endl;
-	)
+	catch (std::exception &ex) {
+		throw std::runtime_error("Could not open file");
+	}
 }
-
-void common::printfile() {}
