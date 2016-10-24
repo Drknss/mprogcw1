@@ -13,7 +13,7 @@ string encoder::xorgate(char a, char b){
 
 string encoder::xorgate(char a, char b, char c) {
 	int ta = (((int)a + (int)b) % 2);
-	return to_string((ta + (int)c) % 2);
+	return to_string((ta + (int)c) %2);
 }
 
 string encoder::encode(string file, int x1, int x2, int x3, int x4, int xorc1, int xorc2) {

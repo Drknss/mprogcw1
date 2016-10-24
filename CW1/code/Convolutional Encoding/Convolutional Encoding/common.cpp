@@ -4,7 +4,6 @@ common::common()
 {
 }
 
-
 common::~common()
 {
 }
@@ -24,12 +23,8 @@ string common::readin(string file_location) {
 }
 
 void common::printtofile(string file, string content) {
-	try {
-		ofstream out(file + ".txt");
+	string fname = file + ".txt";
+	ofstream out(fname);
 		out << content;
 		//out.close;
-	}
-	catch (std::exception &ex) {
-		throw std::runtime_error("Could not open file");
-	}
 }
