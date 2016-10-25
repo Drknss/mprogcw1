@@ -85,7 +85,8 @@ int main() {
 			cout << "Please enter the apropriate number for the function you wish to exicute;" << endl;
 			cout << "1; Generate Unique Encryptions" << endl;
 			cout << "2; Generate Encryption Based Off your Input" << endl;
-			cout << "3; Exit" << endl;
+			cout << "3; Delete All the Encoded files" << endl;
+			cout << "4; Exit" << endl;
 			break;
 		case 2:
 			cout << "You are now in the individual configuration setting";
@@ -105,12 +106,13 @@ int main() {
 			cin >> r3;
 			cout << "Please enter the integer position of the fourth bit, between 0 and 3" << endl;
 			cin >> i1;
-			c->printtofile("coded", e->encode(c->readin(filename1), r1, r2, r3, i1, xor1c, xor2c));
+			c->printtofile(filename2, e->encode(c->readin(filename1), r1, r2, r3, i1, xor1c, xor2c));
 			cout << "Encoding completed" << endl;
 			cout << "Please enter the apropriate number for the function you wish to exicute;" << endl;
 			cout << "1; Generate Unique Encryptions" << endl;
 			cout << "2; Generate Encryption Based Off your Input" << endl;
-			cout << "3; Exit" << endl;
+			cout << "3; Delete All the Encoded files" << endl;
+			cout << "4; Exit" << endl;
 			break;
 		case 3:
 			cout << "Deleting all .txt Files" << endl;

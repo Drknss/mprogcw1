@@ -13,7 +13,7 @@ string common::readin(string file_location) {
 		ifstream file(file_location);
 		if (file.is_open()) {
 			string file_contents{ istreambuf_iterator<char>(file), istreambuf_iterator<char>() };
-			//file.close;
+			file.close();
 			return file_contents;
 		}		
 	}
@@ -26,5 +26,5 @@ void common::printtofile(string file, string content) {
 	string fname = file + ".txt";
 	ofstream out(fname);
 		out << content;
-		//out.close;
+		out.close();
 }
