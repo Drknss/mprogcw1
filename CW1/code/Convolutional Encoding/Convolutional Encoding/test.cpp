@@ -53,6 +53,8 @@ int main() {
 	int x = 0;
 	string filename1;
 	string filename2;
+	string command = "del /Q ";
+	string path = "Results\\*.txt";
 	int r1;
 	int r2;
 	int r3;
@@ -63,7 +65,8 @@ int main() {
 	cout << "Please enter the apropriate number for the function you wish to exicute;" << endl;
 	cout << "1; Generate Unique Encryptions" << endl;
 	cout << "2; Generate Encryption Based Off your Input" << endl;
-	cout << "3; Exit" << endl;
+	cout << "3; Delete All the Encoded files" << endl;
+	cout << "4; Exit" << endl;
 	while (x != -5) {
 		while (!(cin >> x)) {
 			cin.clear();
@@ -110,6 +113,10 @@ int main() {
 			cout << "3; Exit" << endl;
 			break;
 		case 3:
+			cout << "Deleting all .txt Files" << endl;
+			system(command.append(path).c_str());
+			break;
+		case 4:
 			cout << "Now exiting from program" << endl;
 			cout << "Bye Bye";
 			x = -5;
@@ -119,6 +126,6 @@ int main() {
 			cout << "Please enter a valid option" << endl;
 		}
 	}
-
-	system("PAUSE");
+	delete results;
+	delete perm;
 }
