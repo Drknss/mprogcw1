@@ -19,7 +19,7 @@ void generate(string file, encoder* e, vector<string> *results, vector<string> *
 						for (int d = 0; d < 4; d++) {
 							bool dupe = false;
 							//encodes file with current configuration
-							string encoded = e->encode(file, a, b, c, d, 2+i, 2+j);
+							string encoded = e->encode(file, a, b, c, d, i+2, j+2);
 							//for every currently in the vector find out if it already exists
 							for (int it = 0; it < results->size(); it++) {
 								if (!encoded.compare(results->at(it))) {
@@ -81,6 +81,7 @@ int main() {
 			for (int it = 0; it < results->size(); it++) {
 				c->printtofile("Results\\" + perm->at(it), results->at(it));
 			}
+			c->printtofilelbl("filenames", *perm);
 			cout << "Generation Completed" << endl;
 			cout << "Please enter the apropriate number for the function you wish to exicute;" << endl;
 			cout << "1; Generate Unique Encryptions" << endl;
